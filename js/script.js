@@ -36,3 +36,24 @@ btGameOne.addEventListener('click', function () {
         };
     });
 });
+
+btGameTwo.addEventListener('click', function (){
+    firstScreen.classList.add('d-none');
+    GameTwo.className = 'container';
+    let imgUserContainer = document.getElementById('user-img-container');
+    let imgPcContainer = document.getElementById('pc-img-container');
+    let userNumber =[];
+    let pcNumber =[];
+    for (let i = 0; i <=1; i++) {
+        userNumber = (getRndInteger(1, 6));
+        pcNumber = (getRndInteger(1, 6));
+    }
+    imgUserContainer.innerHTML = `<img src="./img/${userNumber}.svg" alt="${userNumber}" class="img-fluid">`
+    imgPcContainer.innerHTML = `<img src="./img/${pcNumber}.svg" alt="${pcNumber}" class="img-fluid">`
+    if(userNumber > pcNumber){
+        console.log("hai vinto")
+    } else {
+        console.log("ritenta")
+    }
+
+});
